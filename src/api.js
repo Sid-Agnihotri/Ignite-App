@@ -20,6 +20,7 @@ const getCurrentDay = () => {
   }
 };
 
+
 //Current day/month/year
 const currentYear = new Date().getFullYear();
 const currentMonth = getCurrentMonth();
@@ -28,8 +29,13 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
+//Keys
+
+const key = "7a0d6e4b91984d74881b388a98f52166";
+const key_url = `key=${key}`;
+
 //Popular Games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const popular_games = `games?${key_url}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=12`; 
 const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
 const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 
